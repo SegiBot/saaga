@@ -1,0 +1,17 @@
+on chat:
+	{konustu.%player%} is true:
+		send "&2Bir sonraki mesaji gondermeden once 2 saniye bekle." to player
+		cancel event
+	else:
+		set {konustu.%player%} to true
+		wait 2 seconds
+		delete {konustu.%player%}
+  
+on chat:
+	{mesaj.%player%} is "%message%":
+		cancel event
+		send "&2Bir sonraki mesaji gondermeden once 2 saniye bekle." to player
+		stop
+		set {mesaj.%player%} to "%message%"
+		wait 4 seconds
+		delete {mesaj.%player%}
